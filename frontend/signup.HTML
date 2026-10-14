@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Create a patient account for EHR Secure.">
+	<title>Sign up | EHR Secure</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page signup-page">
+	<main class="login-layout">
+		<section class="login-intro" aria-label="EHR Secure introduction">
+			<a class="brand login-brand" href="index.HTML" aria-label="EHR Secure home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>EHR <b>Secure</b></span></a>
+			<div class="intro-content"><div class="eyebrow"><span class="eyebrow-dot"></span> Secure connected care</div><h1>Start your<br><em>healthier <span>future.</span></em></h1><p>Create a secure patient account and keep your healthcare journey connected.</p></div>
+			<div class="intro-footer"><span class="intro-shield">⌾</span><span>Protected by blockchain<br><b>Built for better care</b></span></div><div class="intro-grid" aria-hidden="true"></div><div class="intro-orbit" aria-hidden="true"></div>
+		</section>
+		<section class="login-panel" aria-labelledby="signup-title"><div class="login-panel-inner">
+			<a class="signup-back" href="login.HTML?role=patient"><span aria-hidden="true">←</span> Back to Login</a>
+			<div class="login-heading"><div class="section-kicker">Patient registration</div><h2 id="signup-title">Create Account</h2><p>Set up secure access to your Electronic Health Records</p></div>
+			<form class="signup-form" method="post" novalidate>
+				<label class="input-label" for="name">Full Name</label><div class="input-wrap"><input id="name" name="name" type="text" autocomplete="name" required></div>
+				<label class="input-label" for="email">Email address</label><div class="input-wrap"><input id="email" name="email" type="email" autocomplete="email" required></div>
+				<label class="input-label" for="password">Password</label><div class="input-wrap"><input id="password" name="password" type="password" minlength="8" autocomplete="new-password" required><button class="password-toggle" type="button" aria-label="Show password">Show</button></div>
+				<label class="input-label" for="confirm_password">Confirm Password</label><div class="input-wrap"><input id="confirm_password" name="confirm_password" type="password" minlength="8" autocomplete="new-password" required></div>
+				<label class="input-label" for="date_of_birth">Date of Birth</label><div class="input-wrap"><input id="date_of_birth" name="date_of_birth" type="date" required></div>
+				<label class="input-label" for="gender">Gender</label><div class="input-wrap"><select id="gender" name="gender" required><option value="">Select gender</option><option value="female">Female</option><option value="male">Male</option><option value="non-binary">Non-binary</option><option value="prefer-not-to-say">Prefer not to say</option></select></div>
+				<label class="input-label" for="phone">Phone Number</label><div class="input-wrap"><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+				<button class="button button-primary login-button signup-button" type="submit">Create Account <span aria-hidden="true">↗</span></button>
+			</form>
+			<p class="signup-prompt">Already have an account? <a href="login.HTML?role=patient">Login</a></p>
+		</div></section>
+	</main><script src="script.js"></script>
+</body>
+</html>

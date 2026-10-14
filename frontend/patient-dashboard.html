@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient workspace | EHR Secure</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="dashboard-shell">
+    <header class="dashboard-header"><a class="brand" href="index.HTML"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>EHR <b>Secure</b></span></a><a class="logout-link" href="login.HTML?role=patient" id="patient-sign-out">Sign out ↗</a></header>
+    <main class="dashboard-main"><div class="dashboard-kicker">Patient workspace</div><h1>Your health, <em>connected.</em></h1><p>Your secure space to review records explicitly associated with your patient account.</p><section class="patient-records-section" aria-labelledby="patient-records-title"><div class="patient-records-heading"><h2 id="patient-records-title">My Health Records</h2><p id="patient-record-count" aria-live="polite"></p></div><p id="patient-record-status" role="status" aria-live="polite">Loading your records...</p><div class="patient-records-scroll" id="patient-records-scroll" hidden><table class="patient-records-table"><thead><tr><th scope="col">Record date</th><th scope="col">Medical condition</th><th scope="col">Diagnosis</th><th scope="col">Treatment</th></tr></thead><tbody id="patient-records-body"></tbody></table></div></section></main>
+  </div>
+  <script src="patient-dashboard.js" defer></script>
+</body>
+</html>

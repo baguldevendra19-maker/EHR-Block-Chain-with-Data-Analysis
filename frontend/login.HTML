@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Secure access to EHR Secure electronic health records.">
+	<title>Sign in | EHR Secure</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+	<main class="login-layout">
+		<section class="login-intro" aria-label="EHR Secure introduction">
+			<a class="brand login-brand" href="index.HTML" aria-label="EHR Secure home">
+				<span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+				<span>EHR <b>Secure</b></span>
+			</a>
+			<div class="intro-content">
+				<div class="eyebrow"><span class="eyebrow-dot"></span> Secure connected care</div>
+				<h1>Your records.<br><em>Your <span>confidence.</span></em></h1>
+				<p>Access a trusted foundation for smarter, more connected healthcare.</p>
+			</div>
+			<div class="intro-footer"><span class="intro-shield">⌾</span><span>Protected by blockchain<br><b>Built for better care</b></span></div>
+			<div class="intro-grid" aria-hidden="true"></div>
+			<div class="intro-orbit" aria-hidden="true"></div>
+		</section>
+
+		<section class="login-panel" aria-labelledby="login-title">
+			<div class="login-panel-inner">
+				<a class="back-home" href="index.HTML"><span aria-hidden="true">←</span> Back to Home</a>
+				<div class="login-heading">
+					<div class="section-kicker">Secure access</div>
+					<h2 id="login-title">Welcome Back</h2>
+					<p>Secure access to your Electronic Health Records</p>
+				</div>
+
+				<form class="login-form" action="#" method="post">
+					<fieldset class="role-fieldset">
+						<legend>Select your role</legend>
+						<div class="role-options">
+							<label class="role-option selected">
+								<input type="radio" name="role" value="doctor" checked>
+								<span class="role-icon">✚</span><span><strong>Doctor</strong><small>Manage patient records</small></span><span class="role-check">✓</span>
+							</label>
+							<label class="role-option">
+								<input type="radio" name="role" value="patient">
+								<span class="role-icon">◉</span><span><strong>Patient</strong><small>Access your own records</small></span><span class="role-check">✓</span>
+							</label>
+						</div>
+					</fieldset>
+
+					<label class="input-label" for="email">Email address</label>
+					<div class="input-wrap"><span class="input-icon" aria-hidden="true">@</span><input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required></div>
+					<div class="password-label"><label class="input-label" for="password">Password</label><a href="#forgot-password" id="forgot-password-link">Forgot Password?</a></div>
+					<div class="input-wrap"><span class="input-icon" aria-hidden="true">•</span><input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required><button class="password-toggle" type="button" aria-label="Show password">Show</button></div>
+					<button class="button button-primary login-button" type="submit">Login <span aria-hidden="true">↗</span></button>
+				</form>
+				<dialog class="password-reset-dialog" id="forgot-password-dialog" aria-labelledby="forgot-password-title">
+					<button class="password-reset-close" type="button" id="close-password-reset" aria-label="Close">×</button>
+					<h2 id="forgot-password-title">Reset your password</h2>
+					<p>Enter the email address for your Doctor or Patient account. If eligible, reset instructions will be sent.</p>
+					<form id="password-reset-request-form">
+						<label class="input-label" for="reset-request-email">Email address</label>
+						<div class="input-wrap"><span class="input-icon" aria-hidden="true">@</span><input id="reset-request-email" name="email" type="email" autocomplete="email" required></div>
+						<button class="button button-primary login-button" type="submit">Send reset link</button>
+						<p class="password-reset-status" id="password-reset-request-status" role="status" aria-live="polite"></p>
+						<a class="password-reset-dev-link" id="password-reset-dev-link" hidden>Open development reset link</a>
+					</form>
+				</dialog>
+				<p class="signup-prompt">Don't have an account? <a id="signup-link" href="signup-selection.HTML?role=doctor">Sign Up</a></p>
+				<p class="login-note"><span aria-hidden="true">⌾</span> Your information is protected and kept private.</p>
+			</div>
+		</section>
+	</main>
+	<script src="script.js"></script>
+</body>
+</html>

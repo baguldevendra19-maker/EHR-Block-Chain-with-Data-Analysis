@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Choose a patient registration or doctor account request.">
+	<title>Choose account type | EHR Secure</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page signup-page">
+	<main class="login-layout">
+		<section class="login-intro" aria-label="EHR Secure introduction">
+			<a class="brand login-brand" href="index.HTML" aria-label="EHR Secure home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>EHR <b>Secure</b></span></a>
+			<div class="intro-content"><div class="eyebrow"><span class="eyebrow-dot"></span> Secure connected care</div><h1>Your care,<br><em>your account.</em></h1><p>Choose the account type that matches your role in your care journey.</p></div>
+			<div class="intro-footer"><span class="intro-shield">⌾</span><span>Protected by blockchain<br><b>Built for better care</b></span></div><div class="intro-grid" aria-hidden="true"></div><div class="intro-orbit" aria-hidden="true"></div>
+		</section>
+		<section class="login-panel" aria-labelledby="signup-selection-title"><div class="login-panel-inner">
+			<a class="signup-back" id="signup-selection-back" href="login.HTML?role=doctor"><span aria-hidden="true">←</span> Back to Login</a>
+			<div class="login-heading"><div class="section-kicker">Create an account</div><h2 id="signup-selection-title">Choose your role</h2><p>Select the account type you need to continue.</p></div>
+			<div class="signup-choice-list" aria-label="Signup account types">
+				<a class="signup-choice" href="signup.HTML?role=patient">
+					<span class="role-icon" aria-hidden="true">◉</span>
+					<span class="signup-choice-copy"><strong>Patient</strong><small>Register for secure access to your own health records.</small></span>
+					<span class="signup-choice-arrow" aria-hidden="true">↗</span>
+				</a>
+				<a class="signup-choice" href="doctor-signup.HTML?role=doctor">
+					<span class="role-icon" aria-hidden="true">✚</span>
+					<span class="signup-choice-copy"><strong>Doctor</strong><small>Request an account provisioned by an authorized administrator.</small></span>
+					<span class="signup-choice-arrow" aria-hidden="true">↗</span>
+				</a>
+			</div>
+			<p class="signup-prompt">Already have an account? <a href="login.HTML">Login</a></p>
+		</div></section>
+	</main>
+	<script src="script.js"></script>
+</body>
+</html>

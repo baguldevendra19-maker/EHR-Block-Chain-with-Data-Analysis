@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor workspace | EHR Secure</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="dashboard-shell">
+    <header class="dashboard-header"><a class="brand" href="index.HTML"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>EHR <b>Secure</b></span></a><a class="logout-link" href="login.HTML" id="sign-out">Sign out ↗</a></header>
+    <main class="dashboard-main"><div class="dashboard-kicker">Doctor workspace</div><h1>Care, with <em>confidence.</em></h1><p>Your secure workspace for managing verified electronic health records. These controls are ready for the next implementation phase.</p><section class="dashboard-grid" aria-label="Doctor actions"><button class="dashboard-card" id="patient-search-action" type="button" aria-expanded="false" aria-controls="patient-search-section"><div class="dashboard-icon" aria-hidden="true">🔍</div><strong>Search Patient</strong><span>Access patient EHR records.</span></button><article class="dashboard-card"><div class="dashboard-icon">＋</div><strong>Add EHR</strong><span>Create a new health record.</span></article><article class="dashboard-card"><div class="dashboard-icon">✎</div><strong>Edit EHR</strong><span>Update an existing record.</span></article><article class="dashboard-card"><div class="dashboard-icon">◇</div><strong>Verify Record</strong><span>Blockchain verification coming later.</span></article></section>
+      <section class="patient-records-section" id="patient-search-section" aria-labelledby="patient-search-title" hidden>
+        <div class="patient-records-heading">
+          <h2 id="patient-search-title">Patient records</h2>
+          <p id="patient-search-count" aria-live="polite"></p>
+          <button type="button" id="patient-search-close" aria-label="Close patient search">×</button>
+        </div>
+        <div class="patient-search-controls">
+          <label for="patient-search-input">Search Patient</label>
+          <div class="patient-search-input-row">
+            <input id="patient-search-input" type="search" autocomplete="off" placeholder="Enter patient name or ID">
+            <button type="button" id="patient-search-clear">Clear search</button>
+          </div>
+        </div>
+        <p id="patient-search-status" role="status" aria-live="polite">Enter a patient name or ID to search.</p>
+        <div class="patient-records-scroll" id="patient-search-results" hidden>
+          <table class="demo-records-table">
+            <thead><tr><th scope="col">Source</th><th scope="col">Name</th><th scope="col">Age / Gender</th><th scope="col">Blood type</th><th scope="col">Condition</th><th scope="col">Diagnosis / result</th><th scope="col">Treatment / medication</th><th scope="col">Record / admission</th><th scope="col">Discharge</th><th scope="col">Doctor</th><th scope="col">Hospital</th><th scope="col">Billing</th></tr></thead>
+            <tbody id="patient-search-body"></tbody>
+          </table>
+        </div>
+      </section>
+      <section class="demo-records-section" aria-label="Healthcare records">
+        <div class="demo-records-heading">
+          <p id="demo-record-count" aria-live="polite"></p>
+        </div>
+        <p id="demo-record-status" class="demo-record-status" role="status" aria-live="polite">Loading demo records...</p>
+        <div class="demo-table-scroll" id="demo-table-scroll" hidden>
+          <table class="demo-records-table">
+            <thead><tr><th scope="col">Source</th><th scope="col">Name</th><th scope="col">Age / Gender</th><th scope="col">Blood type</th><th scope="col">Condition</th><th scope="col">Diagnosis / result</th><th scope="col">Treatment / medication</th><th scope="col">Record / admission</th><th scope="col">Discharge</th><th scope="col">Doctor</th><th scope="col">Hospital</th><th scope="col">Billing</th></tr></thead>
+            <tbody id="demo-records-body"></tbody>
+          </table>
+        </div>
+        <nav class="demo-pagination" id="demo-pagination" aria-label="Demo dataset pages" hidden>
+          <button type="button" id="demo-previous" disabled>Previous</button>
+          <span id="demo-page-status" aria-live="polite"></span>
+          <button type="button" id="demo-next" disabled>Next</button>
+        </nav>
+      </section>
+    </main>
+  </div>
+  <script src="doctor-dashboard.js" defer></script>
+</body>
+</html>
