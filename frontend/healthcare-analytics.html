@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Aggregate analysis of the independent healthcare sample dataset.">
+	<title>Healthcare Analytics | EHR Secure</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="healthcare-analytics.css">
+</head>
+<body class="analytics-page">
+	<header class="analytics-header">
+		<div class="analytics-header-inner">
+			<a class="brand" href="index.HTML" aria-label="EHR Secure home">
+				<span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+				<span>EHR <b>Secure</b></span>
+			</a>
+			<a class="analytics-home-link" href="index.HTML">&larr; Main website</a>
+		</div>
+	</header>
+
+	<main class="analytics-main">
+		<section class="analytics-intro">
+			<p class="analytics-eyebrow"><span></span> Independent sample data</p>
+			<h1>Healthcare Sample Dataset Analysis</h1>
+			<p>Explore admissions, demographics and billing from the provided healthcare dataset.</p>
+		</section>
+
+		<section class="filter-panel" aria-labelledby="filter-title">
+			<div class="filter-heading">
+				<h2 id="filter-title">Filter by admission date</h2>
+				<p id="available-dates" class="available-dates" aria-live="polite"></p>
+			</div>
+			<form id="analytics-filter" class="analytics-filters">
+				<label class="filter-control">
+					<span>Analysis period</span>
+					<select id="period-select" name="period">
+						<option value="daily">Daily</option>
+						<option value="weekly">Weekly</option>
+						<option value="monthly" selected>Monthly</option>
+						<option value="custom">Custom date range</option>
+					</select>
+				</label>
+				<label id="anchor-control" class="filter-control">
+					<span>Reference date</span>
+					<input id="anchor-date" name="anchor_date" type="date">
+				</label>
+				<label id="start-control" class="filter-control" hidden>
+					<span>Start date</span>
+					<input id="start-date" name="start_date" type="date">
+				</label>
+				<label id="end-control" class="filter-control" hidden>
+					<span>End date</span>
+					<input id="end-date" name="end_date" type="date">
+				</label>
+				<button class="button button-primary filter-submit" type="submit">Update analysis <span aria-hidden="true">&rarr;</span></button>
+			</form>
+			<p id="filter-error" class="analytics-error" role="alert" hidden></p>
+		</section>
+
+		<p id="loading-message" class="status-message" role="status">Loading sample dataset analysis...</p>
+		<p id="empty-message" class="status-message empty-message" role="status" hidden>No records were found for this date range. Choose another period.</p>
+
+		<section class="kpi-grid" aria-label="Key performance indicators">
+			<article class="kpi-card"><span>Total Records</span><strong id="kpi-total">--</strong></article>
+			<article class="kpi-card"><span>Average Age</span><strong id="kpi-age">--</strong><small>Years</small></article>
+			<article class="kpi-card"><span>Total Admissions</span><strong id="kpi-admissions">--</strong></article>
+			<article class="kpi-card"><span>Average Billing</span><strong id="kpi-billing">--</strong></article>
+		</section>
+
+		<section class="charts-section" aria-labelledby="charts-title">
+			<div class="section-heading analytics-section-heading">
+				<div><p class="section-kicker">Sample dataset</p><h2 id="charts-title">Healthcare analysis</h2></div>
+				<p id="selected-period" class="selected-period"></p>
+			</div>
+			<div class="chart-grid">
+				<article class="chart-card"><h3>Medical Condition Distribution</h3><div class="chart-wrap"><canvas id="chart-conditions" role="img" aria-label="Bar chart of medical conditions"></canvas></div></article>
+				<article class="chart-card"><h3>Gender Distribution</h3><div class="chart-wrap"><canvas id="chart-gender" role="img" aria-label="Pie chart of gender distribution"></canvas></div></article>
+				<article class="chart-card"><h3>Age Group Distribution</h3><div class="chart-wrap"><canvas id="chart-age" role="img" aria-label="Bar chart of patient age groups"></canvas></div></article>
+				<article class="chart-card"><h3>Monthly Admissions Trend</h3><div class="chart-wrap"><canvas id="chart-monthly" role="img" aria-label="Line chart of monthly admissions"></canvas></div></article>
+				<article class="chart-card"><h3>Admission Type</h3><div class="chart-wrap"><canvas id="chart-admission" role="img" aria-label="Bar chart of admission types"></canvas></div></article>
+				<article class="chart-card"><h3>Billing Amount Distribution</h3><div class="chart-wrap"><canvas id="chart-billing" role="img" aria-label="Histogram of billing amounts"></canvas></div></article>
+			</div>
+		</section>
+	</main>
+
+	<footer class="analytics-footer"><p>EHR Secure &middot; Independent healthcare sample dataset analysis</p></footer>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+	<script src="healthcare-analytics.js"></script>
+</body>
+</html>

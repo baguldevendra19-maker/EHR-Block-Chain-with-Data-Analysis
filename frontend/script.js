@@ -76,7 +76,13 @@ async function readApiResponse(response) {
       ? 'The server returned an unexpected response.'
       : `The API returned HTTP ${response.status}. Check that the Flask backend is running at ${API_BASE_URL}.`);
   }
-  if (!response.ok) throw new Error(payload.error || 'The request could not be completed.');
+  if (!response.ok) {
+    const fieldErrors = payload.fields && typeof payload.fields === 'object'
+      ? Object.values(payload.fields).filter((message) => typeof message === 'string')
+      : [];
+    const fieldHint = fieldErrors.length ? ` ${fieldErrors.join(' ')}` : '';
+    throw new Error(`${payload.error || 'The request could not be completed.'}${fieldHint}`);
+  }
   return payload;
 }
 const passwordToggle = document.querySelector('.password-toggle');

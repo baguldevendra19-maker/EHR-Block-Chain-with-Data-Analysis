@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Patient Account | EHR Blockchain with Data Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+  <main class="login-layout" style="grid-template-columns: 1fr;">
+    <section class="login-panel" aria-labelledby="verify-title" style="min-height: 100vh;">
+      <div class="login-panel-inner" style="text-align: center;">
+        <a class="brand" href="index.HTML" style="margin-bottom: 24px; justify-content: center;">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>EHR <b>Secure</b></span>
+        </a>
+        <div class="section-kicker" style="justify-content: center;">Account Verification</div>
+        <h1 id="verify-title" style="font-family: var(--serif); font-size: 28px; margin: 12px 0;">Verify Patient Email</h1>
+        <p id="verification-status" role="status" aria-live="polite" style="color: var(--muted); font-size: 14px; margin: 16px 0 24px;">Verifying your email address...</p>
+        <a class="button button-primary" href="login.HTML?role=patient" style="display: inline-flex;">Continue to Patient Sign In &rarr;</a>
+      </div>
+    </section>
+  </main>
+  <script src="verify-email.js" defer></script>
+</body>
+</html>

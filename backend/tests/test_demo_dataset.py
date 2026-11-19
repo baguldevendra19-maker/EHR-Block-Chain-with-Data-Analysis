@@ -153,7 +153,10 @@ class DemoDatasetTests(unittest.TestCase):
                          {"billing_amount": "123.45678"})
 
     def test_demo_table_is_independent_of_accounts_and_real_records(self):
-        demo_table_sql = SCHEMA[2]
+        demo_table_sql = next(
+            statement for statement in SCHEMA
+            if "CREATE TABLE IF NOT EXISTS demo_ehr_records" in statement
+        )
         self.assertIn("UNIQUE KEY uq_demo_source_row (source_file, source_row)", demo_table_sql)
         self.assertNotIn("FOREIGN KEY", demo_table_sql)
         self.assertNotIn("password", demo_table_sql.lower())
